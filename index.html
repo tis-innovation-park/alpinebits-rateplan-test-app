@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>AlpineBits rate plan message test application</title>
+        <meta charset='UTF-8'>
+
+<!--
+
+    AlpineBits rate plan message test application
+    Copyright (C) 2014 TIS innovation park - Free Software & Open Technologies - IT1677580217
+
+    https://tis.bz.it/en/centres/free-software-open-technologies
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+        
+        <!-- common CSS -->
+        
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+
+        
+        <!-- load utility modules -->
+        
+        <script src="js/utildate.js"></script> 
+        <script src="js/utilhtml.js"></script> 
+        <script src="js/utiltool.js"></script> 
+        <script type='text/javascript'>
+            'use strict';
+            var util = {};
+            utildate_install(util);
+            utilhtml_install(util);
+            utiltool_install(util);
+            
+        </script>
+
+        
+        <!-- rate plan message files section -->
+        
+        <link rel="stylesheet" type="text/css" href="css/uirp.css"/>
+        <script src="js/uirp.js"></script> 
+
+        
+        <!-- stays section -->
+
+        <link rel="stylesheet" type="text/css" href="css/uist.css"/>
+        <script src="js/uist.js"></script> 
+
+        
+        <!-- results section -->
+
+        <link rel="stylesheet" type="text/css" href="css/uirs.css"/>
+        <script src="js/uirs.js"></script> 
+
+        
+        <!-- dom helper functions -->
+        
+        <script src="js/dom.js"></script> 
+        
+        
+        <!-- actual algorithm to match stays against rate plan messages -->
+        
+        <script src="js/algo.js"></script> 
+
+        
+        <!-- initialize the single page application -->
+        
+        <script type='text/javascript'>
+
+            'use strict';
+
+            function init() {
+
+                if (!dom_has_dom3xpath()) {
+                    var content = document.getElementById('content');
+                    content.style.padding = '8px';
+                    content.innerHTML = 'Sorry, this browser does not support (enough of) W3C DOM Level 3 XPath. :(';
+                    return;
+                }
+                
+                // show the #dropzone div
+
+                var dz = document.getElementById('dropzone');
+                dz.style["display"] = "block";
+                dz.innerHTML = "please drag &amp; drop your sample files here";
+                dz.addEventListener('drop', uirp_drop_handler, false);
+                dz.addEventListener('dragover', uirp_drop_dragover_handler, false);
+
+                // load stays
+                
+                uist_load();
+                
+                // compute results (at first it will show a message that the XML files are missing)
+                
+                uirs_compute_results();
+            }
+            
+        </script>
+
+    </head>
+    <body onload="init()">
+
+        <div id="content">
+            
+             
+            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+            <div id="title">
+                <img src="img/alpinebits-logo.gif" alt="AlpineBits logo" style="float: right" width="100">
+                <p style="margin: 0px; font-size: 9pt">std: 2014-04-pre, v: <b>1.0</b> (Jul 19 2014)</p>
+                <h1><span style="color: #565451">rate plan message</span> <span style="color: #f6a724">test application</span></h1>
+            </div>
+
+
+            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+            <div id="uirp">
+                <h2>&#9656; 1. rate plan message files (XML)</h2>
+                <div class="indent">
+                    <div id="dropzone"></div>
+                    <div id="rptab"></div>
+                    <div id="rptab_reset">
+                        <button onclick="uirp_reset_rpmsg()">drop files</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            
+            <div id="uist">
+                <h2>&#9656; 2. stays (pseudo-CSV)</h2>
+                <div class="indent">
+
+                    <p>edit the stays: the results will update in real time!</p>
+
+<textarea id="csv" rows="5" wrap="off" onkeyup="uist_load()">
+#name,         arrival,     departure,   num adults,   age child1,  age child2, ...
+
+couple,        2014-08-09,  2014-08-16,  2
+family_2kids,  2014-08-09,  2014-08-16,  2,            5,           0
+family_low,    2014-06-09,  2014-06-16,  2,            5,           0
+
+</textarea>
+                    <p id="csv_summary"></p>
+                </div>
+            </div>
+
+            
+            <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+            <div id="uirs">
+                <h2>&#9656; 3. results</h2>
+                <div class="indent">
+
+                    <div id="report"></div>
+                </div>
+            </div>
+
+
+        </div>
+        
+    <p class="copy">
+        &copy; TIS innovation park - Free Software &amp; Open Technologies - IT1677580217 
+    </p>
+
+    </body>
+</html>

@@ -1,0 +1,92 @@
+/*
+    AlpineBits rate plan message test application
+    Copyright (C) 2014 TIS innovation park - Free Software & Open Technologies - IT1677580217
+
+    https://tis.bz.it/en/centres/free-software-open-technologies
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+body {
+    background-color: #AAAAAA;
+    margin: 0px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 10pt;
+}
+
+#content {
+    background-color: #FFFFFF;
+    margin: 12px 12px 12px 12px;
+    min-width: 746px;
+    padding: 8px;
+    border: 1px solid #000000;
+    box-shadow: 2px 2px 20px #444444;
+    border-radius: 5px;
+
+}
+
+#title {
+    padding: 8px;
+}
+
+.indent {
+    padding: 0px 16px 0px 16px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 20pt;
+    margin: 0px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 14pt;
+    margin-top: 0px;
+    background-color: #EEEEEE;
+
+}
+
+h3 {
+    font-weight: 600;
+    color: #660000;
+    font-size: 12pt;
+    margin-top: 0px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid black;
+    padding: 4px;
+    font-size: 10pt;
+}
+
+td.h {
+    background-color: #EEEEEE;
+    font-weight: bold;
+}
+
+p.copy {
+    width: 746px;
+    padding: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

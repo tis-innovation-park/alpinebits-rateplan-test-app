@@ -1,0 +1,34 @@
+/*
+    AlpineBits rate plan message test application
+    Copyright (C) 2014 TIS innovation park - Free Software & Open Technologies - IT1677580217
+
+    https://tis.bz.it/en/centres/free-software-open-technologies
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+#uist {
+    padding: 8px;
+}
+
+textarea#csv {
+    width: 100%;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 9pt;
+}
+
+p#csv_summary {
+    margin-top: 0px;
+}
