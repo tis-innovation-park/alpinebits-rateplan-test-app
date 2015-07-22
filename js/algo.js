@@ -614,7 +614,9 @@ function get_cost(s_item, rpmsg_item, rpcode, itcode, rate_index, family)
 
 		// sort people
 
-		people = people.sort();
+		people = people.sort(function (a, b) {
+			return a - b;
+		});
 
 		// have the std oldest pay BaseByGuestAmt and remove them from people[]
 
