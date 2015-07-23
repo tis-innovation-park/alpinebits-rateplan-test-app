@@ -334,6 +334,7 @@ function match_rates(s_item, rpmsg_item, rpcode, itcode, offer)
 			if (!rmult) {
 				rmult = 1;
 			}
+			rmult = Number(rmult);
 			if (util.date_between(sdate, edate, dt) && util.date_diff(util.date_add(dt, rmult), edate) >= -1 && util.date_diff(util.date_add(dt, rmult), dep) >= 0) {
 				// ok, rate dates match, now check occupation and costs
 				gc = get_cost(s_item, rpmsg_item, rpcode, itcode, r, offer.family);
@@ -613,7 +614,9 @@ function get_cost(s_item, rpmsg_item, rpcode, itcode, rate_index, family)
 
 		// sort people
 
-		people = people.sort();
+		people = people.sort(function (a, b) {
+			return a - b;
+		});
 
 		// have the std oldest pay BaseByGuestAmt and remove them from people[]
 
