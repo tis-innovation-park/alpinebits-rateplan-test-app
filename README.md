@@ -1,6 +1,6 @@
 alpinebits-rateplan-test-app
 ============================
 
-AlpineBits rate plan message test application
+As of Feb 2015 alpinebits-rateplan-test-app is obsolete.
 
-see http://alpinebits.testingmachine.eu/ for details
+Please use https://github.com/alpinebits/rtapp-201507.
